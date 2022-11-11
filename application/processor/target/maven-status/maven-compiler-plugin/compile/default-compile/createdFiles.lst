@@ -1,0 +1,6 @@
+za\co\rmb\processor\ProcessorApplication.class
+za\co\rmb\processor\cntrlr\OrderController.class
+za\co\rmb\processor\service\impl\OrderServiceImpl.class
+za\co\rmb\processor\service\OrderService.class
+za\co\rmb\processor\service\impl\InstanceLocatorImpl.class
+za\co\rmb\processor\service\InstanceLocator.class

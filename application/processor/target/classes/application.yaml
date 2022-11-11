@@ -1,0 +1,29 @@
+spring:
+  application:
+    repository:
+      name: repository
+      api:
+        orders:
+          find:
+            all: /repository/order/find/all
+          delete: /repository/order/delete
+          update: /repository/order/update
+          add: /repository/order/add
+server:
+  port: ${boot.port:9003}
+  servlet:
+    context-path: /processor
+eureka:
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}:${application.version}
+      registryFetchIntervalSeconds: 30
+      zone: Main
+    lease-renewal-interval-in-seconds: 10
+  client:
+    registerWithEureka: true
+    preferSameZoneEureka: true
+    filter-only-up-instances: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${eureka.server.url}
