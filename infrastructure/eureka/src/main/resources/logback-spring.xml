@@ -13,10 +13,10 @@
     <springProfile name="dev,test,live">
 
         <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-            <file>../logs/current/crs-eureka/crs-eureka-${boot.port}.log</file>
+            <file>../logs/current/eureka/eureka-${boot.port}.log</file>
 
             <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-                <fileNamePattern>../logs/archived/crs-eureka/crs-eureka-${boot.port}.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+                <fileNamePattern>../logs/archived/eureka/eureka-${boot.port}.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
                 <!-- each archived file, size max 100MB -->
                 <maxFileSize>100MB</maxFileSize>
                 <!-- total size of all archive files, if total size > 20GB, it will delete old archived files -->
@@ -31,7 +31,7 @@
         </appender>
 
         <logger name="org.springframework" level="${logger.level}"/>
-        <logger name="za.co.discoveryhealth.crs.gateway.eureka" level="${logger.level}"/>
+        <logger name="za.co.rmb.eureka" level="${logger.level}"/>
         <root level="ERROR">
             <appender-ref ref="FILE-ROLLING"/>
         </root>
