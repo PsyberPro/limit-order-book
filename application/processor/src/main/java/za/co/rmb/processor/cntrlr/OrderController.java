@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.co.rmb.dto.OrderDto;
+import za.co.rmb.common.dto.OrderDto;
 import za.co.rmb.processor.service.OrderService;
 
 import java.util.List;

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import za.co.rmb.dto.OrderDto;
+import za.co.rmb.common.dto.OrderDto;
 import za.co.rmb.processor.service.InstanceLocator;
 import za.co.rmb.processor.service.OrderService;
 

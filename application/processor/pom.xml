@@ -35,7 +35,7 @@
         </dependency>
         <dependency>
             <groupId>za.co.rmb</groupId>
-            <artifactId>dto</artifactId>
+            <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

@@ -1,5 +1,7 @@
 package za.co.rmb.repository.domain;
 
+import za.co.rmb.common.model.Side;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,20 +12,19 @@ public class Order {
     private long id;
     private double price;
     private int quantity;
-    private String orderdate;
-
-    @ManyToOne
-    @JoinColumn(name = "SIDE_ID", insertable = false, updatable = false)
+    @Column(name = "TIME_STAMP")
+    private String timestamp;
+    @Enumerated(EnumType.STRING)
     private Side side;
 
     public Order() {
     }
 
-    public Order(long id, double price, int quantity, String orderdate, Side side) {
+    public Order(long id, double price, int quantity, String timestamp, Side side) {
         this.id = id;
         this.price = price;
         this.quantity = quantity;
-        this.orderdate = orderdate;
+        this.timestamp = timestamp;
         this.side = side;
     }
 
@@ -51,12 +52,12 @@ public class Order {
         this.quantity = quantity;
     }
 
-    public String getOrderdate() {
-        return orderdate;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setOrderdate(String orderdate) {
-        this.orderdate = orderdate;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Side getSide() {
@@ -73,7 +74,7 @@ public class Order {
                 "id=" + id +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", orderdate='" + orderdate + '\'' +
+                ", timestamp='" + timestamp + '\'' +
                 ", side=" + side +
                 '}';
     }

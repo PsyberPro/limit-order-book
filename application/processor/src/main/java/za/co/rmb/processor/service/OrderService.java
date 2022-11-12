@@ -1,6 +1,6 @@
 package za.co.rmb.processor.service;
 
-import za.co.rmb.dto.OrderDto;
+import za.co.rmb.common.dto.OrderDto;
 
 import java.util.List;
 

@@ -1,22 +1,24 @@
-package za.co.rmb.dto;
+package za.co.rmb.common.dto;
+
+import za.co.rmb.common.model.Side;
 
 public class OrderDto {
 
     private long id;
     private double price;
     private int quantity;
-    private String orderdate;
+    private String timestamp;
 
-    private SideDto side;
+    private Side side;
 
     public OrderDto() {
     }
 
-    public OrderDto(long id, double price, int quantity, String orderdate, SideDto side) {
+    public OrderDto(long id, double price, int quantity, String timestamp, Side side) {
         this.id = id;
         this.price = price;
         this.quantity = quantity;
-        this.orderdate = orderdate;
+        this.timestamp = timestamp;
         this.side = side;
     }
 
@@ -49,19 +51,19 @@ public class OrderDto {
         this.quantity = quantity;
     }
 
-    public String getOrderdate() {
-        return orderdate;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setOrderdate(String orderdate) {
-        this.orderdate = orderdate;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public SideDto getSide() {
+    public Side getSide() {
         return side;
     }
 
-    public void setSide(SideDto side) {
+    public void setSide(Side side) {
         this.side = side;
     }
 
@@ -71,7 +73,7 @@ public class OrderDto {
                 "id=" + id +
                 ", price=" + price +
                 ", quantity=" + quantity +
-                ", orderdate='" + orderdate + '\'' +
+                ", timestamp='" + timestamp + '\'' +
                 ", side=" + side +
                 '}';
     }

@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
 
     <modules>
-		<module>dto</module>
+		<module>common</module>
         <module>repository</module>
 		<module>processor</module>
     </modules>
