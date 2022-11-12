@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>crs-eureka</artifactId>
+    <artifactId>eureka</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
