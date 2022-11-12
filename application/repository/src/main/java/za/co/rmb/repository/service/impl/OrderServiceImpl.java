@@ -1,5 +1,7 @@
 package za.co.rmb.repository.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.co.rmb.repository.domain.Order;
@@ -13,6 +15,7 @@ import java.util.Optional;
 @Service
 public class OrderServiceImpl implements OrderService {
 
+    private static final Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
     private OrderRepository orderRepository;
 
     @Autowired
@@ -22,11 +25,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order add(final Order order) {
+        logger.info("persisting new order: {}", order);
         return orderRepository.save(order);
     }
 
     @Override
     public List<Order> findAll() {
+        logger.info("querying all orders");
         List<Order> result = new ArrayList<>();
         orderRepository.findAll().forEach(result::add);
         return result;
@@ -34,6 +39,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order update(final Order orderDto) {
+        logger.info("updating order with Id: {}", orderDto.getId());
         final Optional<Order> optOrder = orderRepository.findById(orderDto.getId());
         if (!optOrder.isPresent()) {
             throw new RuntimeException("The target entity with orderId: "+orderDto.getId()+" to be update is not found");
@@ -45,6 +51,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void delete(final long orderId) {
+        logger.info("deleting order with Id: {}", orderId);
         orderRepository.deleteById(orderId);
     }
 }

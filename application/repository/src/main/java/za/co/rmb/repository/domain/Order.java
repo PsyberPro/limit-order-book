@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table(name = "ORDER_")
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private double price;
     private int quantity;
