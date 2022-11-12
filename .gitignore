@@ -4,7 +4,7 @@ generated/
 classes/
 data/
 generated-sources/
-
+.idea
 .DS_Store
 .settings
 
