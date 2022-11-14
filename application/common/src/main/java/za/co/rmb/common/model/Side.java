@@ -10,7 +10,7 @@ public enum Side {
             case "SELL":
                 return SELL;
             default:
-                throw new IllegalArgumentException("invalid side " + side);
+                throw new IllegalArgumentException("Invalid side: " + side);
         }
     }
 }

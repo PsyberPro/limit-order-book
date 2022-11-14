@@ -3,24 +3,25 @@ package za.co.rmb.repository.domain;
 import za.co.rmb.common.model.Side;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "ORDER_")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private double price;
-    private int quantity;
+    private Long id;
+    private Double price;
+    private Integer quantity;
     @Column(name = "TIME_STAMP")
-    private String timestamp;
+    private Date timestamp;
     @Enumerated(EnumType.STRING)
     private Side side;
 
     public Order() {
     }
 
-    public Order(long id, double price, int quantity, String timestamp, Side side) {
+    public Order(Long id, Double price, Integer quantity, Date timestamp, Side side) {
         this.id = id;
         this.price = price;
         this.quantity = quantity;
@@ -28,35 +29,35 @@ public class Order {
         this.side = side;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public String getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 

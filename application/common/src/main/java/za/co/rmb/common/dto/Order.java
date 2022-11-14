@@ -2,19 +2,26 @@ package za.co.rmb.common.dto;
 
 import za.co.rmb.common.model.Side;
 
-public class OrderDto {
+import java.util.Date;
 
-    private long id;
-    private double price;
-    private int quantity;
-    private String timestamp;
+public class Order implements Comparable<Order> {
+
+    private Long id;
+    private Double price;
+    private Integer quantity;
+    private Date timestamp;
 
     private Side side;
 
-    public OrderDto() {
+    public Order() {
     }
 
-    public OrderDto(long id, double price, int quantity, String timestamp, Side side) {
+    public Order(Long id, Integer quantity) {
+        this.id = id;
+        this.quantity = quantity;
+    }
+
+    public Order(Long id, Double price, Integer quantity, Date timestamp, Side side) {
         this.id = id;
         this.price = price;
         this.quantity = quantity;
@@ -22,40 +29,35 @@ public class OrderDto {
         this.side = side;
     }
 
-    public OrderDto(long id, int quantity) {
-        this.id = id;
-        this.quantity = quantity;
-    }
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public String getTimestamp() {
+    public Date getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -76,5 +78,10 @@ public class OrderDto {
                 ", timestamp='" + timestamp + '\'' +
                 ", side=" + side +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Order order) {
+        return this.getId().compareTo(order.getId());
     }
 }

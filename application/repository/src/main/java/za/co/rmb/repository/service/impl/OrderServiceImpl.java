@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import za.co.rmb.common.model.Side;
 import za.co.rmb.repository.domain.Order;
 import za.co.rmb.repository.repo.OrderRepository;
 import za.co.rmb.repository.service.OrderService;
@@ -35,6 +36,12 @@ public class OrderServiceImpl implements OrderService {
         List<Order> result = new ArrayList<>();
         orderRepository.findAll().forEach(result::add);
         return result;
+    }
+
+    @Override
+    public List<Order> findOrdersBySide(final Side side) {
+        logger.info("querying orders by side: " + side);
+        return orderRepository.findAllBySide(side);
     }
 
     @Override

@@ -6,6 +6,7 @@ spring:
         orders:
           find:
             all: /repository/order/find/all
+            by-side: /repository/order/find/by-side
           delete: /repository/order/delete
           update: /repository/order/update
           add: /repository/order/add

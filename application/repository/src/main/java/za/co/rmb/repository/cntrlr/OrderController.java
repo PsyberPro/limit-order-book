@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import za.co.rmb.common.model.Side;
 import za.co.rmb.repository.domain.Order;
 import za.co.rmb.repository.service.OrderService;
 
@@ -26,6 +27,11 @@ public class OrderController {
     @GetMapping("/find/all")
     public ResponseEntity<List<Order>> findAll() {
         return ResponseEntity.ok(orderService.findAll());
+    }
+
+    @GetMapping("/find/by-side")
+    public ResponseEntity<List<Order>> findOrdersBySide(@Param("side") Side side) {
+        return ResponseEntity.ok(orderService.findOrdersBySide(side));
     }
 
     @PostMapping("/add")
