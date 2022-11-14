@@ -91,4 +91,16 @@ public class LimitOrderBookServiceImpl implements LimitOrderBookService {
     private void addOrder(final Order newOrder, final Queue<Order> ordersQueue) {
         ordersQueue.add(newOrder);
     }
+
+    public PriorityQueue<Order> getBuyOrders() {
+        return buyOrders;
+    }
+
+    public PriorityQueue<Order> getSellOrders() {
+        return sellOrders;
+    }
+
+    public Map<Long, Order> getOrderMap() {
+        return orderMap;
+    }
 }
